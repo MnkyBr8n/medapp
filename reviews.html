@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Reviews</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">MySite</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#appointments">Appointments</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+      <li><a href="signup.html">Sign-Up</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+  </nav>
+
+  <main class="reviews-container">
+    <h2>Patient Reviews</h2>
+
+    <div class="review-card">
+      <div class="review-header">
+        <h3>Dr. Sarah Lee</h3>
+        <p>Cardiologist</p>
+        <p class="status reviewed">Reviewed</p>
+      </div>
+      <p class="review-text">“Dr. Lee was patient, clear, and very kind throughout the consultation.”</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <h3>Dr. Mark Jacobs</h3>
+        <p>Dermatologist</p>
+        <p class="status not-reviewed">Not Reviewed</p>
+      </div>
+      <button class="btn" onclick="openForm('Dr. Mark Jacobs')">Write Review</button>
+    </div>
+  </main>
+
+  <!-- Hidden Feedback Form -->
+  <div id="feedbackModal" class="modal">
+    <form id="reviewForm" class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h3 id="formTitle">Write a Review</h3>
+      <label for="patientName">Your Name</label>
+      <input type="text" id="patientName" required />
+
+      <label for="patientFeedback">Your Feedback</label>
+      <textarea id="patientFeedback" required></textarea>
+
+      <label for="rating">Rating</label>
+      <select id="rating" required>
+        <option value="">Select</option>
+        <option>⭐</option>
+        <option>⭐⭐</option>
+        <option>⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐⭐</option>
+      </select>
+
+      <button type="submit">Submit</button>
+      <div id="reviewError" class="error-message"></div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
